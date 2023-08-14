@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HaCk ThE WeB</title>
+  <style>
+    #iPhone{
+      color:greenyellow;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 25px;
+
+    }
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ff0000;
+      text-align: center;
+    }
+
+    #wrapper-div {
+      margin: 10% auto;
+      text-align: center;
+      align-content: center;
+      display: block;
+    }
+
+    #alert-box {
+      background-color: #000;
+      position: relative;
+      width: 50%;
+      height: 200px;
+      border: 1px solid #ff0000;
+      margin: auto;
+      padding: 20px 10px 10px;
+    }
+
+    #confirm {
+      background-color: #222;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: 50px;
+      bottom: 0;
+    }
+
+    #confirm-button {
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #ff0000;
+      color: #fff;
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      top: -100%;
+      right: 0px;
+      transform: translateY(-50%);
+      width: 65px;
+      padding: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    #confirm-button:hover{
+      background-color: 	#913831;
+      color:greenyellow;
+    }
+
+    .input {
+      position: relative;
+      top: 30%;
+    }
+
+    #input {
+      width: 75%;
+      background-color: #333;
+      color: #00ff00;
+      padding: 5px;
+      border: none;
+      font-family: 'Courier New', Courier, monospace;
+      padding-left: 20px; /* Adjust the value as needed */
+      background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16"><text x="0" y="15" fill="%2300ff00" font-family="Courier New" font-size="14">></text></svg>');
+      background-repeat: no-repeat;
+      background-position: 5px center;
+    }
+
+
+    /* Add the following styles for the falling effect */
+
+    .falling-binary {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .binary {
+      position: absolute;
+      color: #00ff00;
+      font-size: 20px;
+      animation: falling linear infinite;
+    }
+
+    @keyframes falling {
+      0% {
+        transform: translateY(-100%) translateX(-50%);
+      }
+      100% {
+        transform: translateY(100vh) translateX(calc(-50% + var(--random-x)));
+      }
+    }
+
+    #code-title p {
+      text-align: left;
+      margin-left: 30px;
+    }
+
+    #code-title ul {
+      text-align: left;
+      margin-left: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="wrapper-div">
+    <h1 id="lol">Challenge</h1>
+    <div id="alert-box">
+      <label class="input" for="input">Search</label>
+      <br><br>
+      <input type="text" id="input" class="input" placeholder="  H__A__C__K  M__E  !!">
+      <br><br>
+      <div id="confirm">
+        <button id="confirm-button">SUBMIT</button>
+      </div>
+    </div>
+    <br>
+
+    <div id="radioButtons">
+      <label for="chal-1">00</label>
+      <input type="radio" name="challenge" id="chal-1">&nbsp;
+      <label for="chal-2">01</label>
+      <input type="radio" name="challenge" id="chal-2">&nbsp;
+      <label for="chal-3">10</label>
+      <input type="radio" name="challenge" id="chal-3">
+    </div>
+
+    <h4 id="code-title">
+      Welcome!!!<br>
+    <p>
+      XSS, a common web vulnerability, allows attackers to inject malicious scripts into web pages, leading to potentially harmful consequences. By mastering XSS, you'll gain insight into the techniques used by hackers and acquire the knowledge needed to protect web applications from such attacks.
+    </p>
+    <p>
+      Throughout this challenge, you'll explore various scenarios where XSS can be exploited. Imagine being able to:
+    </p>
+    <ul>
+      <li>Steal Cookies: Learn how to inject malicious scripts into vulnerable websites to steal user session cookies. These cookies can grant unauthorized access to user accounts and provide an attacker with control over sensitive information.</li>
+      <li>Craft Phishing Attacks: Discover how XSS can be used to create convincing phishing websites. Experience firsthand how users can unknowingly fall victim to these attacks, compromising their personal data.</li>
+      <li>Redirect Users: Explore the art of redirection through XSS. Inject scripts that cleverly reroute unsuspecting users to malicious websites, tricking them into revealing their credentials or falling into other traps.</li>
+      <li>Deface Websites: Embrace the power of XSS to modify the content of vulnerable websites. Imagine the impact of replacing legitimate information with unexpected, sometimes humorous, and sometimes dangerous content.</li>
+    </ul>
+    <p>
+      By actively engaging with these challenges, you'll develop a deep understanding of XSS and its implications. You'll also gain practical experience in implementing input validation and output encoding techniques to fortify web applications against such attacks.
+    </p></h4>
+    <code id="code"></code>
+    <br>
+    <h4 id="rules"></h4>
+    <p id="ruleLine"></p>
+    <div id="output"></div>
+    <div id="iPhone"></div>
+
+    <!-- Add the following code inside the <div id="wrapper-div"> -->
+
+    <div class="falling-binary">
+      <!-- Generate binary elements using JavaScript -->
+    </div>
+
+    <script>
+      // JavaScript code to generate binary elements
+
+      // Generate random binary elements
+      function generateBinary() {
+        const binaryElement = document.createElement('span');
+        binaryElement.className = 'binary';
+        binaryElement.textContent = Math.random() < 0.5 ? '0' : '1';
+
+        // Randomly position the binary element on the screen
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        const randomX = Math.random() * 200 - 100; // Randomize the horizontal position
+        binaryElement.style.left = x + 'px';
+        binaryElement.style.top = y + 'px';
+
+        // Append the binary element to the falling-binary container
+        const fallingBinary = document.querySelector('.falling-binary');
+        fallingBinary.appendChild(binaryElement);
+
+        // Set the random horizontal position as a CSS variable
+        binaryElement.style.setProperty('--random-x', randomX + 'px');
+
+        // Remove the binary element after it reaches the bottom of the screen
+        binaryElement.addEventListener('animationend', () => {
+          binaryElement.remove();
+          generateBinary(); // Generate a new binary element after removing
+        });
+      }
+
+      // Generate multiple binary elements
+      function generateBinaryElements(count) {
+        for (let i = 0; i < count; i++) {
+          generateBinary();
+        }
+      }
+
+      // Call the generateBinaryElements function to start the falling effect
+      generateBinaryElements(50); // Adjust the count to control the density of falling elements
+    </script>
+
+  </div>
+
+  
+  <script src="main.js"></script>
+
+</body>
+
+</html>
