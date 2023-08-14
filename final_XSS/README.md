@@ -1,5 +1,5 @@
  
-                                              Let's XSS
+                                              ㄥ乇ㄒ'丂    乂丂丂
 🔐 Unleash Your Inner Hacker: The XSS Adventure for bi0s Pentest Recruitment CTF 🕵️‍♂️
 
 Welcome to a web security odyssey that will awaken your hacker instincts and introduce you to the captivating world of vulnerabilities! This is not just any challenge; it's a journey that merges artistry and mischief, brought to life using the dynamic trio of HTML, CSS, and JavaScript. Brace yourself for the Basic XSS challenge, the perfect playground for a curious mind in pursuit of the ever-elusive Reflected XSS exploit.
