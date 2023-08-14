@@ -12,10 +12,6 @@ Immerse yourself in the realm of Cross-Site Scripting (XSS), a vulnerability tha
 
 Picture this: HTML lays the foundation, CSS adds the mystique, and JavaScript sets your code in motion. You're armed with the very tools that power the web, ready to craft an exploit that dances between the lines of malicious intent and ethical exploration. This isn't just about breaking in; it's about understanding how to fortify against being broken into.
 
-🎯 Calling All Novice Hackers: An Educational Opportunity
-
-If you're new to hacking, this challenge is the perfect training ground. We're not just throwing you into the deep end – we're equipping you with knowledge and an environment to experiment safely. Reflected XSS might be your first taste of the hacker's world, but the skills you gain will extend far beyond this challenge.
-
 🎨 Ignite Your Creativity: Crafting the Perfect Payload
 
 Imagine crafting a seemingly harmless piece of code, a puzzle piece that fits snugly into a website's structure. Your payload hides beneath the surface, a hidden gem waiting for the right moment to shine. This is your canvas, your masterpiece, where every line of code is a stroke of artistry and every exploit a testament to your ingenuity.
